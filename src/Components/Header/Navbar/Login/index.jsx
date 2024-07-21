@@ -1,19 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
+  const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email === "user@gmail.com" && password === "123") {
-      // Gọi callback khi đăng nhập thành công nếu có
+    const isValid = email === "user@gmail.com" && password === "123";
+    if (isValid) {
       if (onLoginSuccess) onLoginSuccess();
       alert("Login successful!");
-      window.location.href = "/"; // Chuyển hướng sau khi đăng nhập thành công
+      navigate("/"); // Navigate to home page
     } else {
       alert("Invalid email or password!");
     }
@@ -25,12 +27,10 @@ function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
       alert("Passwords do not match!");
       return;
     }
-
     if (email === "user@gmail.com" && password === "123") {
-      // Gọi callback khi đăng ký thành công nếu có
       if (onRegisterSuccess) onRegisterSuccess();
       alert("Registration successful! You can now log in.");
-      setIsRegistering(false); // Chuyển về form đăng nhập
+      setIsRegistering(false);
     } else {
       alert("Registration failed!");
     }

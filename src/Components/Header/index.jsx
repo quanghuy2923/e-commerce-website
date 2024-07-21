@@ -2,12 +2,14 @@
 
 import Navbar from "./Navbar";
 import Picture from "./Picture";
+import ProductPage from "./ProductPage";
 
 function Header() {
   return (
     <>
-      <Navbar />
+      <Navbar isLoggedIn={false} />
       <Picture />
+      <ProductPage />
     </>
   );
 }

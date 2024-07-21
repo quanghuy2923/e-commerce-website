@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
 function Navbar({ isLoggedIn }) {
@@ -53,12 +54,14 @@ function Navbar({ isLoggedIn }) {
             </button>
             {isDiscoveryOpen && (
               <div className="absolute top-full left-0 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-                <a
-                  href="#"
+                <ScrollLink
+                  to="product-page" // ID của phần trong ProductPage
+                  smooth={true}
+                  duration={500}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
                 >
                   Men Clothes
-                </a>
+                </ScrollLink>
                 <a
                   href="#"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
@@ -74,6 +77,14 @@ function Navbar({ isLoggedIn }) {
               </div>
             )}
           </div>
+          <ScrollLink
+            to="product-page"
+            smooth={true}
+            duration={500}
+            className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
+          >
+            Products
+          </ScrollLink>
           <a
             href="#"
             className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
@@ -103,7 +114,7 @@ function Navbar({ isLoggedIn }) {
             </>
           ) : (
             <Link
-              to="/login"
+              to="/login-register"
               className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
             >
               Log In
@@ -149,12 +160,14 @@ function Navbar({ isLoggedIn }) {
               </svg>
             </button>
             <div className="mt-12 flex flex-col items-start space-y-4 p-4">
-              <a
-                href="#"
+              <ScrollLink
+                to="product-page"
+                smooth={true}
+                duration={500}
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
-                Discovery
-              </a>
+                Products
+              </ScrollLink>
               <a
                 href="#"
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
@@ -186,8 +199,8 @@ function Navbar({ isLoggedIn }) {
                 </>
               ) : (
                 <Link
-                  to="/login"
-                  className="text-gray-700 font-semibold hover:text-[#56B280]"
+                  to="/login-register"
+                  className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
                 >
                   Log In
                 </Link>

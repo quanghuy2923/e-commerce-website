@@ -32,7 +32,7 @@ function Picture() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[952px]">
+    <div className="relative overflow-hidden h-[952px]" id="pictureSection">
       {/* Carousel Image */}
       <div
         className="flex transition-transform duration-1000"
