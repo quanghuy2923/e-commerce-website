@@ -10,19 +10,21 @@ function Header() {
   return (
     <>
       <Navbar isLoggedIn={false} />
-      <div id="pictureSection">
+      <section id="pictureSection">
         <Picture />
-      </div>
-      <div id="productSection">
+      </section>
+      <section id="productSection">
         <ProductPage />
-      </div>
-      <Feature />
-      <div id="aboutUsSection">
+      </section>
+      <section>
+        <Feature />
+      </section>
+      <section id="aboutUsSection">
         <AboutUs />
-      </div>
-      <div id="footerSection">
+      </section>
+      <section id="footerSection">
         <Footer />
-      </div>
+      </section>
     </>
   );
 }

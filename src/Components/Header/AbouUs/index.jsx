@@ -27,25 +27,25 @@ function AboutUs() {
   ];
 
   return (
-    <div className="h-[100vh] flex items-center justify-center">
-      <div className="flex flex-col h-[80%] w-[80%]">
-        <h1 className="text-center text-[48px] mt-2 tracking-widest">
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl">
+        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl mt-2 tracking-widest">
           <span className="font-semibold">About </span>
           <span className="text-[#56B280] font-bold">Us</span>
         </h1>
-        <p className="text-center text-[16px] text-gray-600 mt-[20px] tracking-wider">
+        <p className="text-center text-sm sm:text-base text-gray-600 mt-4 sm:mt-6 tracking-wider max-w-2xl mx-auto">
           Using this system has completely transformed our operations. The
           efficiency and accuracy are unmatched!
         </p>
-        <div className="flex justify-around items-center mt-[10%] gap-[12px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {people.map((person) => (
             <div
               key={person.id}
-              className="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10"
+              className="group relative cursor-pointer overflow-hidden bg-white px-4 sm:px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl rounded-lg"
             >
               <span className="absolute top-[60px] left-1/2 transform -translate-x-1/2 h-20 w-20 rounded-full bg-[#56B280] transition-all duration-300 group-hover:scale-[10]"></span>
-              <div className="relative z-10 mx-auto max-w-md h-[300px]">
-                <div className="flex justify-end ">
+              <div className="relative z-10 mx-auto max-w-md">
+                <div className="flex justify-end">
                   <a
                     href="#"
                     className="text-[#56B280] mr-2 group-hover:text-white"
@@ -56,7 +56,7 @@ function AboutUs() {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-5 w-5 "
+                      className="h-5 w-5"
                     >
                       <path
                         strokeLinecap="round"
@@ -89,11 +89,11 @@ function AboutUs() {
                     className="h-20 w-20 rounded-full"
                   />
                 </div>
-                <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <div className="space-y-4 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
                   <h2 className="text-center font-semibold tracking-wider">
                     {person.name}
                   </h2>
-                  <p className="tracking-wide ">{person.quote}</p>
+                  <p className="tracking-wide text-sm">{person.quote}</p>
                 </div>
               </div>
             </div>
