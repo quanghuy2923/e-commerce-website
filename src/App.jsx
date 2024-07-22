@@ -1,17 +1,34 @@
 import "./tailwind.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Picture from "./Components/Header/Picture";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+
 import LoginRegister from "./Components/Header/Navbar/Login";
 import Header from "./Components/Header";
 
-export default function App() {
+function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Picture />} />
-        <Route path="/login-register" element={<LoginRegister />} />
-      </Routes>
+      <MainContent />
     </Router>
   );
 }
+
+function MainContent() {
+  const location = useLocation();
+  const hideHeaderRoutes = ["/login-register"];
+
+  return (
+    <>
+      {!hideHeaderRoutes.includes(location.pathname) && <Header />}
+      <Routes>
+        <Route path="/login-register" element={<LoginRegister />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;

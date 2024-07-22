@@ -58,6 +58,7 @@ function Navbar({ isLoggedIn }) {
                   to="product-page" // ID của phần trong ProductPage
                   smooth={true}
                   duration={500}
+                  href="#"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
                 >
                   Men Clothes
@@ -79,6 +80,7 @@ function Navbar({ isLoggedIn }) {
           </div>
           <ScrollLink
             to="product-page"
+            href="#"
             smooth={true}
             duration={500}
             className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
@@ -113,11 +115,13 @@ function Navbar({ isLoggedIn }) {
               </a>
             </>
           ) : (
-            <Link
-              to="/login-register"
-              className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
-            >
-              Log In
+            <Link to="/login-register" className="items-center flex mt-2">
+              <button
+                type="button"
+                className="text-white font-semibold bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80  rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              >
+                Log In
+              </button>
             </Link>
           )}
         </div>
@@ -163,6 +167,16 @@ function Navbar({ isLoggedIn }) {
               <ScrollLink
                 to="product-page"
                 smooth={true}
+                href="#"
+                duration={500}
+                className="text-gray-700 font-semibold hover:text-[#56B280] pl-15px"
+              >
+                Discovery
+              </ScrollLink>
+              <ScrollLink
+                to="product-page"
+                smooth={true}
+                href="#"
                 duration={500}
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
@@ -198,11 +212,13 @@ function Navbar({ isLoggedIn }) {
                   </a>
                 </>
               ) : (
-                <Link
-                  to="/login-register"
-                  className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
-                >
-                  Log In
+                <Link to="/login-register">
+                  <button
+                    type="button"
+                    className="text-white font-semibold bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  >
+                    Log In
+                  </button>
                 </Link>
               )}
             </div>

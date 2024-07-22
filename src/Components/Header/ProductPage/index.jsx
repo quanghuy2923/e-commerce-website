@@ -86,54 +86,129 @@ function ProductPage() {
     },
   ];
 
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
   return (
-    <div className="container mx-auto p-4 h-[100vh]" id="#productPage">
-      <h2 className="text-3xl font-bold mb-8 text-center mt-10">
-        Product Page
-      </h2>
+    <div
+      className="container mx-auto p-4 h-[100vh] w-[80%] text-gray-800"
+      id="#productPage"
+    >
+      <h2 className="text-3xl font-bold text-center ">Product Page</h2>
       <p className="mb-8 text-center mt-10">Some Description........</p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow-md rounded-lg p-4 h-[350px] w-full relative group"
+            className="relative  flex flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
           >
-            <img
-              src={item.imageUrl}
-              alt={item.title}
-              className="w-full h-[220px] object-cover mb-2 rounded transition-transform duration-300 ease-in-out transform group-hover:scale-105 cursor-pointer"
-            />
-            <h2 className="text-xl font-bold mb-2">{item.title}</h2>
-            <p className="text-gray-700 mb-2">{item.description}</p>
-            <p className="text-lg font-semibold">{item.price}</p>
-
-            {/* Hover Image */}
-            <img
-              src={item.hoverImageUrl}
-              alt={item.title}
-              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            />
+            <div
+              className="relative mx-3 mt-3 flex h-[200px] overflow-hidden rounded-xl"
+              onMouseEnter={() => setSelectedImage(item.id)}
+              onMouseLeave={() => setSelectedImage(null)}
+            >
+              <img
+                src={
+                  selectedImage === item.id ? item.hoverImageUrl : item.imageUrl
+                }
+                alt={item.title}
+                className="object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer w-full"
+              />
+              <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+                39% OFF
+              </span>
+            </div>
+            <div className="mt-4 px-5 pb-5">
+              <a href="#">
+                <h5 className="text-xl tracking-tight text-slate-900">
+                  {item.title}
+                </h5>
+              </a>
+              <div className="mt-2 mb-5 flex items-center justify-between">
+                <p>
+                  <span className="text-3xl font-bold text-slate-900">
+                    {item.price}
+                  </span>
+                  <span className="text-sm text-slate-900 line-through">
+                    $699
+                  </span>
+                </p>
+                <div className="flex items-center">
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <button
+                  type="button"
+                  className="text-white bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
+                  Add to Cart
+                </button>
+                <a
+                  href="#"
+                  className="rounded-lg border border-gray-300 py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="h-5 w-5 text-gray-900"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-
-      {/* Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
-          onClick={closeModal}
-        >
-          <img
-            src={selectedImage}
-            alt="Full view"
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
     </div>
   );
 }
