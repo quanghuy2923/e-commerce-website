@@ -1,10 +1,11 @@
+// src/Components/Navbar.js
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
-function Navbar({ isLoggedIn }) {
+function Navbar() {
   const [isDiscoveryOpen, setIsDiscoveryOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const discoveryRef = useRef(null);
@@ -54,50 +55,56 @@ function Navbar({ isLoggedIn }) {
             {isDiscoveryOpen && (
               <div className="absolute top-full left-0 w-48 bg-white rounded-md shadow-lg py-2 z-50">
                 <ScrollLink
-                  to="product-page" // ID của phần trong ProductPage
+                  to="productSection"
                   smooth={true}
                   duration={500}
-                  href="#"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
                 >
                   Men Clothes
                 </ScrollLink>
-                <a
-                  href="#"
+                <ScrollLink
+                  to="productSection"
+                  smooth={true}
+                  duration={500}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
                 >
                   Women Clothes
-                </a>
-                <a
-                  href="#"
+                </ScrollLink>
+                <ScrollLink
+                  to="productSection"
+                  smooth={true}
+                  duration={500}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#56B280] hover:text-white text-[14px]"
                 >
                   Accessory
-                </a>
+                </ScrollLink>
               </div>
             )}
           </div>
           <ScrollLink
-            to="product-page"
-            href="#"
+            to="productSection"
             smooth={true}
             duration={500}
             className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
           >
             Products
           </ScrollLink>
-          <a
-            href="#"
+          <ScrollLink
+            to="aboutUsSection"
+            smooth={true}
+            duration={500}
             className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
           >
             About
-          </a>
-          <a
-            href="#"
+          </ScrollLink>
+          <ScrollLink
+            to="footerSection"
+            smooth={true}
+            duration={500}
             className="py-4 px-2 text-gray-700 font-semibold hover:text-[#56B280] transition duration-300"
           >
             Contact Us
-          </a>
+          </ScrollLink>
 
           <>
             <a
@@ -163,35 +170,37 @@ function Navbar({ isLoggedIn }) {
             </button>
             <div className="mt-12 flex flex-col items-start space-y-4 p-4">
               <ScrollLink
-                to="product-page"
+                to="productSection"
                 smooth={true}
-                href="#"
                 duration={500}
-                className="text-gray-700 font-semibold hover:text-[#56B280] pl-15px"
+                className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
                 Discovery
               </ScrollLink>
               <ScrollLink
-                to="product-page"
+                to="productSection"
                 smooth={true}
-                href="#"
                 duration={500}
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
                 Products
               </ScrollLink>
-              <a
-                href="#"
+              <ScrollLink
+                to="aboutUsSection"
+                smooth={true}
+                duration={500}
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
                 About
-              </a>
-              <a
-                href="#"
+              </ScrollLink>
+              <ScrollLink
+                to="footerSection"
+                smooth={true}
+                duration={500}
                 className="text-gray-700 font-semibold hover:text-[#56B280]"
               >
                 Contact Us
-              </a>
+              </ScrollLink>
 
               <a
                 href="#"
@@ -207,15 +216,6 @@ function Navbar({ isLoggedIn }) {
                 <FaShoppingCart className="inline h-6 w-6" />
                 Cart
               </a>
-
-              {/* <Link to="/login-register">
-                  <button
-                    type="button"
-                    className="text-white bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                  >
-                    Log In
-                  </button>
-                </Link> */}
             </div>
           </div>
         )}

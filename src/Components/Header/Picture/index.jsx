@@ -3,7 +3,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "@fontsource/roboto"; // Defaults to weight 400.
 import { GiClothes } from "react-icons/gi";
 
-const images = ["src/assets/zara.png", "src/assets/hermes.png"]; // Add paths to your images
+const images = [
+  "src/assets/zara.png",
+  "src/assets/hermes.png",
+  "src/assets/image.png",
+]; // Add paths to your images
 
 function Picture() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +36,7 @@ function Picture() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[952px]" id="pictureSection">
+    <div className="relative overflow-hidden h-[952px]">
       {/* Carousel Image */}
       <div
         className="flex transition-transform duration-1000"
@@ -50,7 +54,7 @@ function Picture() {
       </div>
 
       {/* Card in the middle */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] h-[280px] mt-[15px]  md:max-w-[700px] bg-white bg-opacity-80 p-4 md:p-8 shadow-lg flex flex-col items-center text-center">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 tracking-wider -translate-y-1/2 w-[95%] h-[280px] mt-[15px]  md:max-w-[700px] bg-white bg-opacity-80 p-4 md:p-8 shadow-lg flex flex-col items-center text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           <GiClothes />
         </h2>
