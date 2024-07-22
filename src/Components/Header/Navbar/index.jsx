@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Navbar({ isLoggedIn }) {
   const [isDiscoveryOpen, setIsDiscoveryOpen] = useState(false);
@@ -99,31 +99,30 @@ function Navbar({ isLoggedIn }) {
           >
             Contact Us
           </a>
-          {isLoggedIn ? (
-            <>
-              <a
-                href="#"
-                className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-[#56B280] hover:text-white transition duration-300"
-              >
-                <FaUser className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-[#56B280] hover:text-white transition duration-300"
-              >
-                <FaShoppingCart className="h-6 w-6" />
-              </a>
-            </>
-          ) : (
-            <Link to="/login-register" className="items-center flex mt-2">
-              <button
-                type="button"
-                className="text-white font-semibold bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80  rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-              >
-                Log In
-              </button>
-            </Link>
-          )}
+
+          <>
+            <a
+              href="#"
+              className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-[#56B280] hover:text-white transition duration-300"
+            >
+              <FaUser className="h-6 w-6" />
+            </a>
+            <a
+              href="#"
+              className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-[#56B280] hover:text-white transition duration-300"
+            >
+              <FaShoppingCart className="h-6 w-6" />
+            </a>
+          </>
+
+          {/* <Link to="/login-register" className="items-center flex mt-2">
+            <button
+              type="button"
+              className="text-white font-semibold bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80  rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              Log In
+            </button>
+          </Link> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -194,33 +193,30 @@ function Navbar({ isLoggedIn }) {
               >
                 Contact Us
               </a>
-              {isLoggedIn ? (
-                <>
-                  <a
-                    href="#"
-                    className="text-gray-700 font-semibold hover:text-[#56B280]"
-                  >
-                    <FaUser className="inline h-6 w-6" />
-                    Profile
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-700 font-semibold hover:text-[#56B280]"
-                  >
-                    <FaShoppingCart className="inline h-6 w-6" />
-                    Cart
-                  </a>
-                </>
-              ) : (
-                <Link to="/login-register">
+
+              <a
+                href="#"
+                className="text-gray-700 font-semibold hover:text-[#56B280]"
+              >
+                <FaUser className="inline h-6 w-6" />
+                Profile
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 font-semibold hover:text-[#56B280]"
+              >
+                <FaShoppingCart className="inline h-6 w-6" />
+                Cart
+              </a>
+
+              {/* <Link to="/login-register">
                   <button
                     type="button"
-                    className="text-white font-semibold bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    className="text-white bg-gradient-to-r from-[#56B280] via-green-500 to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Log In
                   </button>
-                </Link>
-              )}
+                </Link> */}
             </div>
           </div>
         )}
