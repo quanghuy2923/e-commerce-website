@@ -6,6 +6,8 @@ import { GiClothes } from "react-icons/gi";
 const images = [
   "src/assets/zara.png",
   "src/assets/hermes.png",
+
+  "src/assets/adidas.png",
   "src/assets/image.png",
 ]; // Add paths to your images
 

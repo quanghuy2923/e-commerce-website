@@ -86,15 +86,15 @@ function ProductPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="container mx-auto p-4 h-[100vh] w-[80%] text-gray-800">
+    <div className="container mx-auto p-4 text-gray-800">
       <h2 className="text-3xl text-center text-[#56B280] font-semibold text-[48px] tracking-widest mt-4 mb-10">
         Product
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {items.map((item) => (
           <div
             key={item.id}
-            className="relative  flex flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
+            className="relative flex flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
           >
             <div
               className="relative mx-3 mt-3 flex h-[200px] overflow-hidden rounded-xl"
@@ -175,33 +175,22 @@ function ProductPage() {
                   </svg>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="mr-1 h-5 w-5"
+                ></svg>
                 <button
                   type="button"
-                  className="text-white bg-gradient-to-r from-[#56B280] to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  className="text-white bg-gradient-to-r from-[#56B280] to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-[80%] ml-[30px]"
                 >
                   Add to Cart
                 </button>
-                <a
-                  href="#"
-                  className="rounded-lg border border-gray-300 py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="h-5 w-5 text-gray-900"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </a>
-              </div>
+              </a>
             </div>
           </div>
         ))}
