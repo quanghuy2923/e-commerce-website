@@ -11,27 +11,62 @@ function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const isValid = email === "user@gmail.com" && password === "123";
-    if (isValid) {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Success:', result);
       if (onLoginSuccess) onLoginSuccess();
       alert("Login successful!");
       navigate("/"); // Navigate to home page
-    } else {
-      alert("Invalid email or password!");
+    } catch (error) {
+      console.error('Error:', error);
+      alert("Login failed!");
     }
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-    if (email === "user@gmail.com" && password === "123") {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Success:', result);
       if (onRegisterSuccess) onRegisterSuccess();
       alert("Registration successful! You can now log in.");
       setIsRegistering(false);
-    } else {
+    } catch (error) {
+      console.error('Error:', error);
       alert("Registration failed!");
     }
   };
