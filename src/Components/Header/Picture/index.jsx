@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "@fontsource/roboto"; // Defaults to weight 400.
-import { GiClothes } from "react-icons/gi";
 
 const images = [
   "src/assets/zara.png",
@@ -56,10 +55,20 @@ function Picture() {
       </div>
 
       {/* Card in the middle */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 tracking-wider -translate-y-1/2 w-[95%] h-[280px] mt-[15px]  md:max-w-[700px] bg-white bg-opacity-80 p-4 md:p-8 shadow-lg flex flex-col items-center text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          <GiClothes />
-        </h2>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 tracking-wider -translate-y-1/2 w-[95%] h-[300px] mt-[15px]  md:max-w-[700px] bg-white bg-opacity-80 p-4 md:p-8 shadow-lg flex flex-col items-center text-center">
+        <div className="flex space-x-4">
+          <img
+            src="src/assets/clothes-game-jersey-svgrepo-com.png"
+            alt="Clothes"
+            className="object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer w-[32px] mb-4"
+          />
+          <img
+            src="src/assets/clothes-jersey-shirt-svgrepo-com.png"
+            alt="Clothes"
+            className="object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer w-[40px] mb-4"
+          />
+        </div>
+
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
           The Luxury Clothes
         </h2>
@@ -68,7 +77,10 @@ function Picture() {
           fashion and accessories, designed to elevate your style and provide a
           unique shopping experience.
         </p>
-        <button className="px-4 py-2 bg-[#56B280] text-white font-semibold rounded hover:bg-green-700 transition duration-300">
+        <button
+          type="button"
+          className="text-white bg-gradient-to-r from-[#56B280] to-green-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-[30%]"
+        >
           Discovery
         </button>
       </div>
