@@ -12,28 +12,31 @@ function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:8000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: email,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        "https://2430-171-250-165-101.ngrok-free.app/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: email,
+            password: password,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const result = await response.json();
-      console.log('Success:', result);
+      console.log("Success:", result);
       if (onLoginSuccess) onLoginSuccess();
       alert("Login successful!");
       navigate("/"); // Navigate to home page
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       alert("Login failed!");
     }
   };
@@ -45,10 +48,10 @@ function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
       return;
     }
     try {
-      const response = await fetch('http://127.0.0.1:8000/register', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:8000/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           username: email,
@@ -61,12 +64,12 @@ function LoginRegister({ onLoginSuccess, onRegisterSuccess }) {
       }
 
       const result = await response.json();
-      console.log('Success:', result);
+      console.log("Success:", result);
       if (onRegisterSuccess) onRegisterSuccess();
       alert("Registration successful! You can now log in.");
       setIsRegistering(false);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       alert("Registration failed!");
     }
   };
