@@ -7,7 +7,7 @@ const login = require('./Routes/login_router')
 const { DATABASE_URL } = require('./Config/DB_Config')
 const { default: mongoose } = require('mongoose')
 const  register = require('./Routes/register_router')
-
+const  product = require('./Routes/product_router')
 
 
 mongoose.connect(DATABASE_URL)
@@ -18,13 +18,11 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(cors())
 
-app.use('/',test)
-app.use('/login', login)
-app.use('/register',register)
-
-
-
-app.listen(8000,() => {
-
+app
+    .use('/',test)
+    .use('/login', login)
+    .use('/register',register)
+    .use('/dashboard',product)
+    .listen(8000,() => {
     console.log('App running on port 8000!')
 })

@@ -34,13 +34,9 @@ const Login_check = (Post_Login, req, res) => {
     const post_method = async (req,res) =>{
     try{
 
-         const Post_Login = await models.findOne({
-                username: req.body.username,
-                
+        const Post_Login = await models.findOne({
+            username: req.body.username,
         })
-        // const password = Post_Login.password
-        // console.log(Post_Login.password)
-
     
        Login_check(Post_Login, req, res)
 
