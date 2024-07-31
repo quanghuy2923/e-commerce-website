@@ -4,7 +4,7 @@ const param = require('./../Controler/Test-Controler')
 const http = require('http')
 const router = express.Router()
 router.use(express.json())
-const tours = (fs.readFileSync('./../starter/dev-data/data/test_file.html'))
+const tours = (fs.readFileSync('./dev-data/data/test_file.html'))
 const get_method = (req,res) => {
  
     res.writeHead(200,{'Content-type':'text/html'})

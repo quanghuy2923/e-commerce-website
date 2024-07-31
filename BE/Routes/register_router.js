@@ -33,7 +33,7 @@ const Register_json = await model.create({
 return res.status(201).json({
     stast: 'Success',
     data: {
-        Result: 'Login success'
+        Result: 'Register success'
     }
 })
 }catch(err) {
@@ -41,7 +41,7 @@ return res.status(201).json({
     return res.status(304).json({
         stats: "Fail",
         data: {
-            Result: 'Username and password incorrect!'
+            Result: 'Register unsuccess!'
         }
     })}
 
