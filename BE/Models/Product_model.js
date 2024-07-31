@@ -19,22 +19,22 @@ const { default: mongoose } = require("mongoose")
         description: {
             type: String,
             require: [true,'Must have description'],
-            unique: true
+            unique: false
         },
         price: {
             type: Number,
             require: [true,'Must have price'],
-            unique: true
+            unique: false
         },
         imageUrl: {
             type: String,
             require: [true,'Must have imageUrl'],
-            unique: true
+            unique: false
         },
         hoverImageUrl: {
             type: String,
             require: [true,'Must have hoverImageUrl'],
-            unique: true
+            unique: false
         },
     })
     const Login_Page = mongoose.model('Products',login_Model)
